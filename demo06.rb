@@ -23,13 +23,17 @@ end
 # like a wokr
 
 class Fish
-  # class method
+  # variable class method
   @@name = "Tuna"
 
   # getter method
   def self.name
     puts "Self inside class methods is #{self}"
     @@name
+  end
+
+  def name
+    "sólo vivo en la instancia"
   end
 end
 

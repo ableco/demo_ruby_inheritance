@@ -1,6 +1,6 @@
 module AbleToBreathUnderwater
-  def can_breath_underwater
-    "is able to breath underwater"
+  def can_breath_underwater?
+    "Yes, I am able to breath underwater"
   end
 end
 
@@ -19,24 +19,49 @@ class Pet
   def eat
     "with its mouth"
   end
+
+  def speak
+    "soy mudo"
+  end
+
+  def to_s
+    "yo mismo"
+  end
 end
 
 class Cat < Pet
   attr_reader :meows
 
   def initialize(name, age, meows)
-    super(name, age)
+    super(name, age) # llamando a initializer del padre. 
     @meows = meows
   end
+
+  def speak
+    puts "meow"
+    super
+  end
+
+  def to_s
+    call "veterinario"
+    super
+  end
+  
 end
 
-class Dog
+class Dog < Pet
   attr_reader :barks
 
   def initialize(name, age, barks)
     super(name, age)
     @barks = barks
   end
+
+  def speak
+    "guao guao"
+    puts super
+  end
+  
 end
 
 # irb(main):008:0> cat_lucy = Cat.new "Lucy", 3, true
